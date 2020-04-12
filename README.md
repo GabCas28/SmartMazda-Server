@@ -1,5 +1,5 @@
 # Mazda Server
- Server for smart mazda prject
+ Server for smart mazda prject (in development)
 
 Built with Node.js and EJS tempaltes
 
