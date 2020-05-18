@@ -4,6 +4,13 @@ body {
     color: #989898;
 }
 
+.delete {
+    color: #b31010;
+    padding: 5px 0;
+    margin: -12px 0;
+    border-radius: 10px;
+}
+
 #top-menu {
     display: inline-flex;
 }
@@ -24,13 +31,21 @@ body {
     clear: both;
 }
 
-input[type="text"] {
-    width: 70%;
-    padding: 20px;
+#search {
+    background-image: url('/assets/searchicon.png');
+    /* Add a search icon to input */
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+    width: 96%;
+    padding: 1.5% 2%;
     background: #181c22;
     border: 0;
-    float: left;
-    font-size: 20px;
+    border-radius: 5px;
+    margin: 1.5% 0;
+    /* float: left; */
+    font-size: 119%;
     color: #989898;
 }
 
@@ -59,8 +74,15 @@ li {
     box-sizing: border-box;
     font-family: arial;
     font-size: 20px;
-    cursor: pointer;
     letter-spacing: 1px;
+}
+
+li * {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
 }
 
 .active,
@@ -100,7 +122,7 @@ a {
 }
 
 .responsive-table .table-row {
-    background-color: #fff;
+    background-color: #333;
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -110,7 +132,7 @@ a {
 }
 
 .responsive-table .col-2 {
-    flex-basis: 40%;
+    flex-basis: 15%;
 }
 
 .responsive-table .col-3 {
@@ -118,7 +140,11 @@ a {
 }
 
 .responsive-table .col-4 {
-    flex-basis: 25%;
+    flex-basis: 30%;
+}
+
+.responsive-table .col-12 {
+    flex-basis: 100%;
 }
 
 @media all and (max-width: 767px) {

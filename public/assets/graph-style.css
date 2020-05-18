@@ -1,16 +1,17 @@
 .canvas {
-    min-height: 400px;
+    min-height: 250px;
     background: black;
 }
 
 path {
     fill: none;
-    stroke: white;
+    stroke: #927979;
     stroke-width: 1.5;
 }
 
 .dot {
-    fill: white;
+    fill: #560808;
+    stroke: black;
 }
 
 .dot.focus {
@@ -19,5 +20,25 @@ path {
 }
 
 text {
+    fill: grey;
+}
+
+.label {
+    fill: white;
+}
+
+.reference path {
+    stroke: #7e7eaf;
+}
+
+path.minimum {
+    stroke-dasharray: 8;
+}
+
+path.average {
+    stroke-dasharray: 8 20 1;
+}
+
+.reference text:hover {
     fill: white;
 }

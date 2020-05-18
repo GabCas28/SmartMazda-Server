@@ -1,0 +1,42 @@
+<div>
+    <ul id="trips" class="responsive-table">
+        <li class="table-header">
+            <div class="col col-3" onclick="sortTable(0)">Start Time</div>
+            <div class="col col-1" onclick="sortTable(1)">Duration</div>
+            <div class="col col-1" onclick="sortTable(2)">Av. Speed</div>
+            <div class="col col-1" onclick="sortTable(3)">Av. RPM</div>
+            <div class="col col-1" onclick="sortTable(4)">Av. Engine Load</div>
+            <div class="col col-2" onclick="sortTable(5)">Av. Coolant Temp</div>
+            <div class="col col-2" onclick="sortTable(6)">Av. Throttle Pos</div>
+            <div class="col col-1">Action</div>
+        </li>
+        <% for(var i=0; i< trips.length; i++){ trip = trips[i]%>
+
+            <li class="table-row" trip-id="<%=trip._id%>">
+                <div class="col col-3" data-label="Start Time" value="<%=new Date(trip.startTime).getTime()%>">
+                    <%=new Date(trip.startTime)%>
+                </div>
+                <div class="col col-1" data-label="Duration" value="<%=trip.duration%>">
+                    <%=secondstoHHMMSS(trip.duration)%>
+                </div>
+                <div class="col col-1" data-label="Av. Speed" value="<%=trip.avSpeed%>">
+                    <%=trip.avSpeed%>
+                </div>
+                <div class="col col-1" data-label="Av. RPM" value="<%=trip.avRPM%>">
+                    <%=trip.avRPM%>
+                </div>
+                <div class="col col-1" data-label="Av. Engine Load" value="<%=trip.avEngineLoad%>">
+                    <%=trip.avEngineLoad%>
+                </div>
+                <div class="col col-2" data-label="Av. Coolant Temp" value="<%=trip.avCoolantTemp%>">
+                    <%=trip.avCoolantTemp%>
+                </div>
+                <div class="col col-2" data-label="AV. Throttle Pos" value="<%=trip.avThrottlePos%>">
+                    <%=trip.avThrottlePos%>
+                </div>
+                <button class="col col-1 delete" trip-id="<%=trip._id%>">Delete</button>
+            </li>
+            <% } %>
+    </ul>
+
+</div>

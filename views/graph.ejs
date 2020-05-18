@@ -9,43 +9,36 @@
         <%- include('partials/navbar') %>
             <h1>Smart Mazda Trips</h1>
             <div id="trip-table">
-                <ul class="responsive-table">
-                    <li class="table-header">
-                        <div class="col col-1">Trip ID</div>
-                        <div class="col col-2">Average Speed</div>
-                        <div class="col col-3">Average RPM</div>
-                        <div class="col col-4">Average Engine Load</div>
-                    </li>
+                <%- include('partials/trip-table') %>
 
-                    <li class="table-row" trip-id="<%=trip._id%>">
-                        <div class="col col-1" data-label="Trip ID">
-                            <%=trip.tripID%>
-                        </div>
-                        <div class="col col-2" data-label="Average Speed">
-                            <%=trip.avSpeed%>
-                        </div>
-                        <div class="col col-3" data-label="Average RPM">
-                            <%=trip.avRPM%>
-                        </div>
-                        <div class="col col-4" data-label="Average Engine Load">
-                            <%=trip.avEngineLoad%>
-                        </div>
-                    </li>
-                    <li class="table-header">
-                        <div class="col-2">Speed</div>
-                        <div class="col-2">RPM</div>
-                        <div class="col-2">Engine Load</div>
-                    </li>
-                    <li class="row">
-                        <div class="col col-2 canvas" id="speed-graph"></div>
-                        <div class="col col-2 canvas" id="rpm-graph"></div>
-                        <div class="col col-2 canvas" id="engine-load-graph"></div>
-                    </li>
+                    <div id="graph-table">
+                        <ul class="responsive-table">
+                            <li class="row">
+                                <div class="col col-12 canvas" id="speed-graph"></div>
+                            </li>
 
-                </ul>
+                            <li class="row">
+                                <div class="col col-12 canvas" id="rpm-graph"></div>
+                            </li>
+
+                            <li class="row">
+                                <div class="col col-12 canvas" id="engineLoad-graph"></div>
+                            </li>
+
+                            <li class="row">
+                                <div class="col col-12 canvas" id="coolantTemp-graph"></div>
+                            </li>
+
+                            <li class="row">
+                                <div class="col col-12 canvas" id="throttlePos-graph"></div>
+                            </li>
+
+                        </ul>
+                    </div>
             </div>
             <script type="text/javascript">
-                var trip = <%-JSON.stringify(trip)%>
+                var trip = <%-JSON.stringify(trips[0])%>
+                console.log("trip", trip)
             </script>
 
             <script src="/assets/graph.js"></script>

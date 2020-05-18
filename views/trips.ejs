@@ -10,34 +10,9 @@
             <h1>Smart Mazda Trips</h1>
             <div id="trip-table">
                 <form>
-                    <input type="text" name="item" id="item" placeholder="Search item..." required>
-                    <button type="submit">Search</button>
+                    <input onkeyup="tableFilter()" type="text" name="search" id="search" placeholder="Search date..." required>
                 </form>
-                <ul class="responsive-table">
-                    <li class="table-header">
-                        <div class="col col-1">Trip ID</div>
-                        <div class="col col-2">Average Speed</div>
-                        <div class="col col-3">Average RPM</div>
-                        <div class="col col-4">Average Engine Load</div>
-                    </li>
-                    <% for(var i=0; i< trips.length; i++){ trip = trips[i]%>
-
-                        <li class="table-row" trip-id="<%=trip._id%>">
-                            <div class="col col-1" data-label="Trip ID">
-                                <%=trip.tripID%>
-                            </div>
-                            <div class="col col-2" data-label="Average Speed">
-                                <%=trip.avSpeed%>
-                            </div>
-                            <div class="col col-3" data-label="Average RPM">
-                                <%=trip.avRPM%>
-                            </div>
-                            <div class="col col-4" data-label="Average Engine Load">
-                                <%=trip.avEngineLoad%>
-                            </div>
-                        </li>
-                        <% } %>
-                </ul>
+                <%- include('partials/trip-table') %>
             </div>
     </body>
 
