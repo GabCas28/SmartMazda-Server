@@ -33,7 +33,7 @@ module.exports = function(app) {
 	app.get('/trips', function(req, res) {
 		Trip.find({}, function(err, data) {
 			if (err) throw err;
-			res.render('trips', { trips: data, "secondsToHHMMSS": secondsToHHMMSS  });
+			res.render('trips', { trips: data, secondsToHHMMSS: secondsToHHMMSS });
 		});
 	});
 
@@ -44,7 +44,7 @@ module.exports = function(app) {
 			console.log('req.query._id', req.query._id);
 			Trip.findById(req.query._id, function(err, data) {
 				if (err) throw err;
-				res.render('graph', { trips: [ data ], "secondsToHHMMSS": secondsToHHMMSS });
+				res.render('graph', { trips: [ data ] });
 			});
 		}
 	});
