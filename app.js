@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3000;
 var express = require("express");
 var tripController = require('./controllers/tripController');
 var homeController = require('./controllers/homeController');
@@ -19,6 +20,6 @@ tripController(app);
 homeController(app);
 
 // Run listening server 
-app.listen("3000", function(){
+app.listen(PORT, function(){
     console.log("Listening to requests in port 3000");
 });
